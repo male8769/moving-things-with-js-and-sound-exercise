@@ -69,6 +69,7 @@ function moveDodgerLeft() {
   
     if (left > 0) {
       dodger.style.left = `${left - 1}px`;
+      playSoundOnMovement(); // Play sound
     }
 }
 
@@ -78,6 +79,7 @@ function moveDodgerRight() {
   
     if (left < 360) { // Change as needed
         dodger.style.left = `${left + 1}px`;
+        playSoundOnMovement(); // Play sound
     }
 }
 
@@ -87,6 +89,7 @@ function moveDodgerUp() {
 
     if (bottom < 360) { // Adjust the limit as needed
         dodger.style.bottom = `${bottom + 1}px`; // Move up
+        playSoundOnMovement(); // Play sound
     }
 }
 
@@ -96,6 +99,7 @@ function moveDodgerDown() {
 
     if (bottom > 0) { // Prevent moving below the screen
         dodger.style.bottom = `${bottom - 1}px`; // Move down
+        playSoundOnMovement(); // Play sound
     }
 }
 
@@ -111,7 +115,12 @@ document.addEventListener("keydown", function (e) {
     }
 });
 
+const movementSound = document.getElementById("movementSound");
 
 
+function playSoundOnMovement() {
+    movementSound.currentTime = 0; // Restart sound from the beginning
+    movementSound.play(); // Play the sound
+}
 
 
