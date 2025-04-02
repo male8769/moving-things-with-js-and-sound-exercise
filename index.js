@@ -60,6 +60,7 @@
 
 
 const dodger = document.getElementById("dodger");
+dodger.style.backgroundColor = "tomato";
 
 dodger.style.bottom = "0px"; // Ensuring initial bottom position
 
